@@ -1,0 +1,300 @@
+  description: Example
+
+  # Weight System Settings
+  weight_options:
+    min_points: 5
+    max_points: 20
+    min_starting_items: 1
+    max_starting_items: 4
+
+  # Overall Mystery Settings
+  alttpr:
+    # World and Goals
+    world_state:
+      standard: 0
+      open: 1
+      inverted: 2
+      retro: off
+    goals:
+      ganon: 0
+      fast_ganon: -2
+      dungeons: 2
+      pedestal: 1
+      triforce-hunt: -10
+
+    tower_open:
+      "0": 7
+      "1": 6
+      "2": 5
+      "3": 4
+      "4": 3
+      "5": 2
+      "6": 1
+      "7": 0
+    ganon_open:
+      "0": 7
+      "1": 6
+      "2": 5
+      "3": 4
+      "4": 3
+      "5": 2
+      "6": 1
+      "7": 0
+
+    # Entrance and Doors
+    entrance_shuffle:
+      none: 0
+      dungeonssimple: off
+      dungeonsfull: 1
+      simple: off
+      restricted: 3
+      full: off
+      crossed: 5
+      insanity: 10
+    shufflelinks:
+      on: 2
+      off: 0
+    door_shuffle:
+      vanilla: 0
+      basic: off
+      crossed: 15
+    intensity:
+      1: 0
+      2: off
+      3: 5
+    experimental:
+      on: 0
+      off: off
+    mixed_travel:
+      prevent: 0
+      allow: off
+      force: off
+    standardize_palettes:
+      standardize: 0
+      original: off
+
+
+    # Other behaviours
+    keydropshuffle:
+      on: 5
+      off: 0
+    shopsanity:
+      on: 2
+      off: 0
+    pot_shuffle:
+      on: off
+      off: 0
+    bombbag:
+      on: 2
+      off: 0
+    map_shuffle:
+      on: 1
+      off: 0
+    compass_shuffle:
+      on: 1
+      off: 0
+    smallkey_shuffle:
+      on: 5
+      off: 0
+    bigkey_shuffle:
+      on: 4
+      off: 0
+    dungeon_counters:
+      on: off
+      off: off
+      default: 0
+    weapons:
+      randomized: 0
+      assured: -2
+      vanilla: 1
+      swordless: 10
+    item_pool:
+      normal: 0
+      hard: 2
+      expert: 10
+    item_functionality:
+      normal: 0
+      hard: 2
+      expert: 10
+    hints:
+      on: -1
+      off: 0
+    pseudoboots:
+      on: -2
+      off: 0
+
+    # Enemizer
+    boss_shuffle:
+      none: 0
+      simple: 1
+      full: 1
+      random: 1
+    enemy_shuffle:
+      none: 0
+      shuffled: 2
+      random: 1
+    enemy_damage:
+      default: 0
+      shuffled: 1
+      random: 1
+    enemy_health:
+      default: 0
+      easy: -3
+      hard: 2
+      expert: 5
+    beemizer:
+      0: 0
+      1: off
+      2: off
+      3: off
+      4: off
+
+  # Logic specifications
+  logic:
+    glitches_required:
+      none: 0
+      no_logic: off
+    accessibility:
+      items: 0
+      locations: off
+      none: off
+
+  # TFH Specifics
+  tfh:
+    triforce_goal_min:
+      10: 0
+    triforce_goal_max:
+      30: 0
+    triforce_pool_min:
+      20: 0
+    triforce_pool_max:
+      40: 0
+    triforce_min_difference:
+      10: 0
+
+  # ALTTPR Start Inventory
+  startinventory:
+    Pegasus Boots:
+      on: -2
+      off: 0
+    Progressive Bow:
+      on: -2
+      off: 0
+    Hookshot:
+      on: -2
+      off: 0
+    Mushroom:
+      on: 0
+      off: 0
+    Magic Powder:
+      on: -1
+      off: 0
+    Fire Rod:
+      on: -2
+      off: 0
+    Ice Rod:
+      on: -1
+      off: 0
+    Bombos:
+      on: 0
+      off: 0
+    Ether:
+      on: 0
+      off: 0
+    Quake:
+      on: -2
+      off: 0
+    Lamp:
+      on: -2
+      off: 0
+    Hammer:
+      on: -2
+      off: 0
+    Shovel:
+      on: 0
+      off: 0
+    Ocarina:
+      on: -2
+      off: 0
+    Book of Mudora:
+      on: -1
+      off: 0
+    Bottle:
+      on: -1
+      off: 0
+    Cane of Somaria:
+      on: -1
+      off: 0
+    Cane of Byrna:
+      on: -1
+      off: 0
+    Cape:
+      on: -1
+      off: 0
+    Magic Mirror:
+      on: -2
+      off: 0
+    Pegasus Boots:
+      on: -1
+      off: 0
+    Progressive Glove:
+      on: -1
+      off: 0
+    Flippers:
+      on: -1
+      off: 0
+    Moon Pearl:
+      on: -1
+      off: 0
+    Bombs (3):
+      on: -1
+      off: 0
+    Rupees (100):
+      on: -1
+      off: 0
+    Rupees (300):
+      on: -1
+      off: 0
+
+      
+  # ALTTPR Rom Settings
+  rom:
+    sprite:
+      unchanged: 0
+      Bob: off
+    quickswap:
+      on: 0
+      off: off
+    reduce_flashing:
+      on: off
+      off: 0
+    fast_menu:
+      instant: off
+      quadruple: off
+      triple: off
+      double: off
+      normal: 0
+      half: off
+    heartcolor:
+      red: 0
+      blue: off
+      green: off
+      yellow: off
+      random: off
+    heartbeep:
+      double: off
+      normal: 0
+      half: off
+      quarter: off
+      off: off
+    shuffle_sfx:
+      on: off
+      off: 0
+    ow_palettes:
+      default: 0
+      random: off
+      blackout: off
+    uw_palettes:
+      default: 0
+      random: off
+      blackout: off
