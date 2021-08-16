@@ -3,8 +3,8 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 15
-    max_points: 30
+    min_points: 20
+    max_points: 40
     min_starting_items: 0
     max_starting_items: 3
 
@@ -57,32 +57,32 @@
 
     # Other behaviours
     keydropshuffle:
-      on: 5
-      off: 0
+      "on": 5
+      "off": 0
     shopsanity:
-      on: 2
-      off: 0
+      "on": 2
+      "off": 0
     pot_shuffle:
-      on: off
-      off: 0
+      "on": off
+      "off": 0
     bombbag:
-      on: 2
-      off: 0
+      "on": 2
+      "off": 0
     map_shuffle:
-      on: 1
-      off: 0
+      "on": 1
+      "off": 0
     compass_shuffle:
-      on: 1
-      off: 0
+      "on": 1
+      "off": 0
     smallkey_shuffle:
-      on: 5
-      off: 0
+      "on": 5
+      "off": 0
     bigkey_shuffle:
-      on: 4
-      off: 0
+      "on": 4
+      "off": 0
     dungeon_counters:
-      on: off
-      off: off
+      "on": off
+      "off": off
       default: 0
     weapons:
       randomized: 0
@@ -98,11 +98,11 @@
       hard: 2
       expert: 10
     hints:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     pseudoboots:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
 
     # Enemizer
     boss_shuffle:
@@ -133,8 +133,8 @@
   # Entrance specific
   entrance:
     shufflelinks:
-      on: 1
-      off: 0
+      "on": 1
+      "off": 0
 
   # Doors specific
   doors:
@@ -143,8 +143,8 @@
       2: off
       3: 5
     experimental:
-      on: 0
-      off: off
+      "on": 0
+      "off": off
     mixed_travel:
       prevent: 0
       allow: off
@@ -179,86 +179,86 @@
   # ALTTPR Start Inventory
   startinventory:
     Pegasus Boots:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Progressive Bow:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Hookshot:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Mushroom:
-      on: 0
-      off: 0
+      "on": 0
+      "off": 0
     Magic Powder:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Fire Rod:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Ice Rod:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Bombos:
-      on: 0
-      off: 0
+      "on": 0
+      "off": 0
     Ether:
-      on: 0
-      off: 0
+      "on": 0
+      "off": 0
     Quake:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Lamp:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Hammer:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Shovel:
-      on: 0
-      off: 0
+      "on": 0
+      "off": 0
     Ocarina:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Book of Mudora:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Bottle:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Cane of Somaria:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Cane of Byrna:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Cape:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Magic Mirror:
-      on: -2
-      off: 0
+      "on": -2
+      "off": 0
     Pegasus Boots:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Progressive Glove:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Flippers:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Moon Pearl:
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Bombs (3):
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Rupees (100):
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
     Rupees (300):
-      on: -1
-      off: 0
+      "on": -1
+      "off": 0
 
       
   # ALTTPR Rom Settings
@@ -267,11 +267,11 @@
       unchanged: 0
       Bob: off
     quickswap:
-      on: 0
-      off: off
+      "on": 0
+      "off": off
     reduce_flashing:
-      on: off
-      off: 0
+      "on": off
+      "off": 0
     fast_menu:
       instant: off
       quadruple: off
@@ -290,10 +290,10 @@
       normal: 0
       half: off
       quarter: off
-      off: off
+      "off": off
     shuffle_sfx:
-      on: off
-      off: 0
+      "on": off
+      "off": 0
     ow_palettes:
       default: 0
       random: off

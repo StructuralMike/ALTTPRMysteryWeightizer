@@ -57,7 +57,7 @@ def main():
         start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])
         item_choices = []
         for setting,alternatives in yaml_weights['startinventory'].items():
-            if True in alternatives and type(alternatives[True]) == int:
+            if 'on' in alternatives and type(alternatives['on']) == int:
                 item_choices.append(setting)
         random.shuffle(item_choices)
         while start_items > len(settings['startinventory']):
