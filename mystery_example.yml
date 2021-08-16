@@ -1,15 +1,15 @@
-  description: Example
+  description: Example Points
 
   # Weight System Settings
+  # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 5
-    max_points: 20
-    min_starting_items: 1
-    max_starting_items: 4
+    min_points: 15
+    max_points: 30
+    min_starting_items: 0
+    max_starting_items: 3
 
-  # Overall Mystery Settings
-  alttpr:
-    # World and Goals
+  # World settings
+  world:
     world_state:
       standard: 0
       open: 1
@@ -41,38 +41,19 @@
       "6": 1
       "7": 0
 
-    # Entrance and Doors
     entrance_shuffle:
       none: 0
       dungeonssimple: off
-      dungeonsfull: 1
+      dungeonsfull: 5
       simple: off
-      restricted: 3
+      restricted: 5
       full: off
-      crossed: 5
-      insanity: 10
-    shufflelinks:
-      on: 2
-      off: 0
+      crossed: 7
+      insanity: 20
     door_shuffle:
       vanilla: 0
       basic: off
       crossed: 15
-    intensity:
-      1: 0
-      2: off
-      3: 5
-    experimental:
-      on: 0
-      off: off
-    mixed_travel:
-      prevent: 0
-      allow: off
-      force: off
-    standardize_palettes:
-      standardize: 0
-      original: off
-
 
     # Other behaviours
     keydropshuffle:
@@ -126,20 +107,20 @@
     # Enemizer
     boss_shuffle:
       none: 0
-      simple: 1
-      full: 1
-      random: 1
+      simple: 3
+      full: 3
+      random: 3
     enemy_shuffle:
       none: 0
-      shuffled: 2
-      random: 1
+      shuffled: 7
+      random: 7
     enemy_damage:
       default: 0
-      shuffled: 1
-      random: 1
+      shuffled: 3
+      random: 3
     enemy_health:
       default: 0
-      easy: -3
+      easy: -5
       hard: 2
       expert: 5
     beemizer:
@@ -148,6 +129,29 @@
       2: off
       3: off
       4: off
+
+  # Entrance specific
+  entrance:
+    shufflelinks:
+      on: 1
+      off: 0
+
+  # Doors specific
+  doors:
+    intensity:
+      1: 0
+      2: off
+      3: 5
+    experimental:
+      on: 0
+      off: off
+    mixed_travel:
+      prevent: 0
+      allow: off
+      force: off
+    standardize_palettes:
+      standardize: 0
+      original: off
 
   # Logic specifications
   logic:
@@ -162,7 +166,7 @@
   # TFH Specifics
   tfh:
     triforce_goal_min:
-      10: 0
+      20: 0
     triforce_goal_max:
       30: 0
     triforce_pool_min:

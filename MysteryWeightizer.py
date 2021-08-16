@@ -20,11 +20,25 @@ def main():
 
         settings['description'] = yaml_weights['description']
 
-        for setting,alternatives in yaml_weights['alttpr'].items():
+        for setting,alternatives in yaml_weights['world'].items():
             options = [x for x in list(alternatives.items()) if type(x[1]) == int]
             option = random.choice(options)
             settings[setting] = {option[0]: 1}
             points += option[1]
+
+        if 'none' not in settings['entrance_shuffle']:
+            for setting,alternatives in yaml_weights['entrance'].items():
+                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
+                option = random.choice(options)
+                settings[setting] = {option[0]: 1}
+                points += option[1]
+
+        if 'vanilla' not in settings['door_shuffle']:
+            for setting,alternatives in yaml_weights['entrance'].items():
+                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
+                option = random.choice(options)
+                settings[setting] = {option[0]: 1}
+                points += option[1]
 
         for setting,alternatives in yaml_weights['logic'].items():
             options = [x for x in list(alternatives.items()) if type(x[1]) == int]
@@ -63,7 +77,7 @@ def main():
         if points <= yaml_weights['weight_options']['max_points'] and points >= yaml_weights['weight_options']['min_points']:
             break
 
-    print(points)
+    print('Generated settings scoring {} points'.format(points))
 
     output_file = "mystery_weighted.yaml"
     with open(output_file, "w+", encoding='utf-8') as f:
