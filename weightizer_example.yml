@@ -13,32 +13,32 @@
     world_state:
       standard: 0
       open: 1
-      inverted: 2
+      inverted: 5
       retro: off
     goals:
       ganon: 0
       fast_ganon: -2
-      dungeons: 2
-      pedestal: 1
+      dungeons: 5
+      pedestal: 2
       triforce-hunt: -10
 
     tower_open:
-      "0": 7
-      "1": 6
-      "2": 5
-      "3": 4
-      "4": 3
-      "5": 2
-      "6": 1
+      "0": -7
+      "1": -6
+      "2": -5
+      "3": -4
+      "4": -3
+      "5": -2
+      "6": -1
       "7": 0
     ganon_open:
-      "0": 7
-      "1": 6
-      "2": 5
-      "3": 4
-      "4": 3
-      "5": 2
-      "6": 1
+      "0": -7
+      "1": -6
+      "2": -5
+      "3": -4
+      "4": -3
+      "5": -2
+      "6": -1
       "7": 0
 
     entrance_shuffle:
@@ -177,6 +177,7 @@
       10: 0
 
   # ALTTPR Start Inventory
+  # As specified in the weight_options, a random selection of these will be turned on, if available
   startinventory:
     Pegasus Boots:
       "on": -2
