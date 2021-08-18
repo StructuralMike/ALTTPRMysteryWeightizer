@@ -44,10 +44,10 @@
     entrance_shuffle:
       none: 0
       simple: off
-      restricted: 5
+      restricted: off
       full: off
-      crossed: 7
-      insanity: 20
+      crossed: 10
+      insanity: off
     door_shuffle:
       vanilla: 0
       basic: off

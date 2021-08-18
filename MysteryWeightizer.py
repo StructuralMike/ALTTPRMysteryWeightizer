@@ -2,6 +2,17 @@ import yaml
 import random
 import argparse
 
+def roll_settings(weights,settings,points,sub='none'):
+    for setting,alternatives in weights.items():
+        options = [x for x in list(alternatives.items()) if type(x[1]) == int]
+        option = random.choice(options)
+        if sub != 'none':
+            settings[sub][setting] = {option[0]: 1}
+        else:
+            settings[setting] = {option[0]: 1}
+        points += option[1]
+    return settings,points
+
 def main():
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument('--i', help='Path to the points weights file to use for rolling game settings')
@@ -21,49 +32,27 @@ def main():
     with open(input_yaml, "r", encoding='utf-8') as f:
         yaml_weights = yaml.load(f, Loader=yaml.SafeLoader)
 
+
+
     while True:
         settings = {}
         points = 0
 
-        for setting,alternatives in yaml_weights['world'].items():
-            options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-            option = random.choice(options)
-            settings[setting] = {option[0]: 1}
-            points += option[1]
+        settings,points = roll_settings(yaml_weights['world'], settings, points)
+
+        settings,points = roll_settings(yaml_weights['logic'], settings, points)
 
         if 'none' not in settings['entrance_shuffle']:
-            for setting,alternatives in yaml_weights['entrance'].items():
-                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-                option = random.choice(options)
-                settings[setting] = {option[0]: 1}
-                points += option[1]
+            settings,points = roll_settings(yaml_weights['entrance'], settings, points)
 
         if 'vanilla' not in settings['door_shuffle']:
-            for setting,alternatives in yaml_weights['entrance'].items():
-                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-                option = random.choice(options)
-                settings[setting] = {option[0]: 1}
-                points += option[1]
+            settings,points = roll_settings(yaml_weights['doors'], settings, points)
 
         if 'vanilla' not in settings['overworld_shuffle']:
-            for setting,alternatives in yaml_weights['ow'].items():
-                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-                option = random.choice(options)
-                settings[setting] = {option[0]: 1}
-                points += option[1]
-
-        for setting,alternatives in yaml_weights['logic'].items():
-            options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-            option = random.choice(options)
-            settings[setting] = {option[0]: 1}
-            points += option[1]
+            settings,points = roll_settings(yaml_weights['ow'], settings, points)
 
         if 'triforce-hunt' in settings['goals']:
-            for setting,alternatives in yaml_weights['tfh'].items():
-                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-                option = random.choice(options)
-                settings[setting] = {option[0]: 1}
-                points += option[1]
+            settings,points = roll_settings(yaml_weights['tfh'], settings, points)
 
         settings['startinventory'] = {}
         start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])
@@ -71,25 +60,21 @@ def main():
         try:
             for setting,alternatives in yaml_weights['startinventory'].items():
                 if 'on' in alternatives and type(alternatives['on']) == int:
-                    if 'off' in alternatives and type(alternatives['on']) != int:
+                    if 'off' in alternatives and type(alternatives['off']) != int:
                         settings['startinventory'][alternatives[0]] = {'on': 1}
                         points += alternatives[1]
                     else:
-                        item_choices.append(setting)
+                        item_choices.append((setting, alternatives['on']))
             random.shuffle(item_choices)
             while start_items > len(settings['startinventory']):
                 item = item_choices.pop()
-                settings['startinventory'][item] = {'on': 1}
-                points += option[1]
+                settings['startinventory'][item[0]] = {'on': 1}
+                points += item[1]
         except:
             pass # No (more) starting items available
 
         settings['rom'] = {}
-        for setting,alternatives in yaml_weights['rom'].items():
-            options = [x for x in list(alternatives.items()) if type(x[1]) == int]
-            option = random.choice(options)
-            settings['rom'][setting] = {option[0]: 1}
-            points += option[1]
+        settings,points = roll_settings(yaml_weights['rom'], settings, points, sub='rom')
         
         if points <= yaml_weights['weight_options']['max_points'] and points >= yaml_weights['weight_options']['min_points']:
             break
