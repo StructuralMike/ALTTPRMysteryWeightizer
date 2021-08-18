@@ -45,6 +45,13 @@ def main():
                 settings[setting] = {option[0]: 1}
                 points += option[1]
 
+        if 'vanilla' not in settings['overworld_shuffle']:
+            for setting,alternatives in yaml_weights['ow'].items():
+                options = [x for x in list(alternatives.items()) if type(x[1]) == int]
+                option = random.choice(options)
+                settings[setting] = {option[0]: 1}
+                points += option[1]
+
         for setting,alternatives in yaml_weights['logic'].items():
             options = [x for x in list(alternatives.items()) if type(x[1]) == int]
             option = random.choice(options)
@@ -64,13 +71,15 @@ def main():
         try:
             for setting,alternatives in yaml_weights['startinventory'].items():
                 if 'on' in alternatives and type(alternatives['on']) == int:
-                    item_choices.append(setting)
+                    if 'off' in alternatives and type(alternatives['on']) != int:
+                        settings['startinventory'][alternatives[0]] = {'on': 1}
+                        points += alternatives[1]
+                    else:
+                        item_choices.append(setting)
             random.shuffle(item_choices)
             while start_items > len(settings['startinventory']):
                 item = item_choices.pop()
-                options = [x for x in list(yaml_weights['startinventory'][item].items()) if type(x[1]) == int]
-                option = random.choice(options)
-                settings['startinventory'][item] = {option[0]: 1}
+                settings['startinventory'][item] = {'on': 1}
                 points += option[1]
         except:
             pass # No (more) starting items available

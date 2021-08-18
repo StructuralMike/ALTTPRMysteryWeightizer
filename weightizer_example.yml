@@ -3,9 +3,9 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 20
-    max_points: 40
-    min_starting_items: 0
+    min_points: 25
+    max_points: 45
+    min_starting_items: 1
     max_starting_items: 3
 
   # World settings
@@ -13,7 +13,7 @@
     world_state:
       standard: 0
       open: 1
-      inverted: 5
+      inverted: 7
       retro: off
     goals:
       ganon: 0
@@ -43,8 +43,6 @@
 
     entrance_shuffle:
       none: 0
-      dungeonssimple: off
-      dungeonsfull: 5
       simple: off
       restricted: 5
       full: off
@@ -54,8 +52,12 @@
       vanilla: 0
       basic: off
       crossed: 15
+    overworld_shuffle:
+      vanilla: off
+      parallel: 10
+      full: 20
 
-    # Other behaviours
+      # Other behaviours
     keydropshuffle:
       "on": 5
       "off": 0
@@ -152,6 +154,20 @@
     standardize_palettes:
       standardize: 0
       original: off
+
+  # OW specific
+  ow:
+    overworld_keepsimilar:
+      "on": 0
+      "off": 3
+    overworld_swap:
+      vanilla: 0
+      mixed: 5
+      crossed: 5
+    flute_shuffle:
+      vanilla: 0
+      balanced: 2
+      random: 4
 
   # Logic specifications
   logic:
