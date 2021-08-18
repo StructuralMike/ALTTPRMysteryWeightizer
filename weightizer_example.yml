@@ -11,7 +11,7 @@
   # World settings
   world:
     world_state:
-      standard: 0
+      standard: off # Currently broken in OW-rando
       open: 1
       inverted: 7
       retro: off
@@ -22,22 +22,22 @@
       pedestal: 2
       triforce-hunt: -10
 
-    tower_open:
-      "0": -7
-      "1": -6
-      "2": -5
-      "3": -4
-      "4": -3
-      "5": -2
-      "6": -1
+    tower_open: # The effect of tower_open on length and difficulty depends on many other settings.
+      "0": 0
+      "1": 0
+      "2": 0
+      "3": 0
+      "4": 0
+      "5": 0
+      "6": 0
       "7": 0
     ganon_open:
-      "0": -7
-      "1": -6
-      "2": -5
-      "3": -4
-      "4": -3
-      "5": -2
+      "0": -12
+      "1": -10
+      "2": -8
+      "3": -6
+      "4": -5
+      "5": -3
       "6": -1
       "7": 0
 
@@ -89,7 +89,7 @@
     weapons:
       randomized: 0
       assured: -2
-      vanilla: 1
+      vanilla: off # Needs to be turned off in OW-rando due to red bomb pathing being disabled
       swordless: 10
     item_pool:
       normal: 0
