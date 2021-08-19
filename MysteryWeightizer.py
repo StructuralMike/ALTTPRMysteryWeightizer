@@ -19,28 +19,24 @@ def main():
     parser.add_argument('--o', help='Output path for the rolled mystery yaml')
     args = parser.parse_args()
 
+    input_yaml = "weightizer_example.yml"
+    output_file = "mystery_weighted.yaml"
+
     if args.i:
         input_yaml = args.i
-    else:
-        input_yaml = "weightizer_example.yml"
 
     if args.o:
         output_file = args.o
-    else:
-        output_file = "mystery_weighted.yaml"
 
     with open(input_yaml, "r", encoding='utf-8') as f:
         yaml_weights = yaml.load(f, Loader=yaml.SafeLoader)
 
-
-
     while True:
-        settings = {}
+        settings = {'rom': {}, 'startinventory': {}}
         points = 0
 
+        settings,points = roll_settings(yaml_weights['rom'], settings, points, sub='rom')
         settings,points = roll_settings(yaml_weights['world'], settings, points)
-
-        settings,points = roll_settings(yaml_weights['logic'], settings, points)
 
         if 'none' not in settings['entrance_shuffle']:
             settings,points = roll_settings(yaml_weights['entrance'], settings, points)
@@ -54,13 +50,13 @@ def main():
         if 'triforce-hunt' in settings['goals']:
             settings,points = roll_settings(yaml_weights['tfh'], settings, points)
 
-        settings['startinventory'] = {}
-        start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])
-        item_choices = []
+        # Roll starting inventory
         try:
+            start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])
+            item_choices = []
             for setting,alternatives in yaml_weights['startinventory'].items():
                 if 'on' in alternatives and type(alternatives['on']) == int:
-                    if 'off' in alternatives and type(alternatives['off']) != int:
+                    if 'off' not in alternatives or type(alternatives['off']) != int:
                         settings['startinventory'][alternatives[0]] = {'on': 1}
                         points += alternatives[1]
                     else:
@@ -72,9 +68,6 @@ def main():
                 points += item[1]
         except:
             pass # No (more) starting items available
-
-        settings['rom'] = {}
-        settings,points = roll_settings(yaml_weights['rom'], settings, points, sub='rom')
         
         if points <= yaml_weights['weight_options']['max_points'] and points >= yaml_weights['weight_options']['min_points']:
             break

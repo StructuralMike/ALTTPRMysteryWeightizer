@@ -4,8 +4,8 @@
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
     min_points: 25
-    max_points: 45
-    min_starting_items: 1
+    max_points: 80
+    min_starting_items: 0
     max_starting_items: 3
 
   # World settings
@@ -51,18 +51,26 @@
     door_shuffle:
       vanilla: 0
       basic: off
-      crossed: 15
+      crossed: 20
     overworld_shuffle:
-      vanilla: off
-      parallel: 10
+      vanilla: 0
+      parallel: 20
       full: 20
+    overworld_swap:
+      vanilla: 0
+      mixed: 10
+      crossed: 20
+    flute_shuffle:
+      vanilla: 0
+      balanced: off
+      random: off
 
-      # Other behaviours
+    # Dungeon items
     keydropshuffle:
-      "on": 5
+      "on": 8
       "off": 0
     shopsanity:
-      "on": 2
+      "on": 5
       "off": 0
     pot_shuffle:
       "on": off
@@ -71,13 +79,13 @@
       "on": 2
       "off": 0
     map_shuffle:
-      "on": 1
+      "on": 2
       "off": 0
     compass_shuffle:
-      "on": 1
+      "on": 2
       "off": 0
     smallkey_shuffle:
-      "on": 5
+      "on": 6
       "off": 0
     bigkey_shuffle:
       "on": 4
@@ -86,6 +94,8 @@
       "on": off
       "off": off
       default: 0
+    
+    # Misc
     weapons:
       randomized: 0
       assured: -2
@@ -93,38 +103,45 @@
       swordless: 10
     item_pool:
       normal: 0
-      hard: 2
-      expert: 10
+      hard: 5
+      expert: 15
     item_functionality:
       normal: 0
-      hard: 2
-      expert: 10
+      hard: 10
+      expert: 25
     hints:
-      "on": -1
-      "off": 0
-    pseudoboots:
       "on": -2
       "off": 0
+    pseudoboots:
+      "on": -4
+      "off": 0
+    glitches_required:
+      none: 0
+      no_logic: off
+    accessibility:
+      items: 0
+      locations: off
+      none: off
 
     # Enemizer
     boss_shuffle:
       none: 0
-      simple: 3
-      full: 3
-      random: 3
+      simple: 4
+      full: 4
+      random: 4
     enemy_shuffle:
       none: 0
-      shuffled: 7
-      random: 7
+      shuffled: 8
+      random: 8
     enemy_damage:
       default: 0
-      shuffled: 3
-      random: 3
+      shuffled: 4
+      random: 4
     enemy_health:
       default: 0
-      easy: -5
-      hard: 2
-      expert: 5
+      easy: -6
+      hard: 4
+      expert: 10
     beemizer:
       0: 0
       1: off
@@ -155,29 +172,11 @@
       standardize: 0
       original: off
 
-  # OW specific
+  # OW Specifics
   ow:
     overworld_keepsimilar:
       "on": 0
-      "off": 3
-    overworld_swap:
-      vanilla: 0
-      mixed: 5
-      crossed: 5
-    flute_shuffle:
-      vanilla: 0
-      balanced: 2
-      random: 4
-
-  # Logic specifications
-  logic:
-    glitches_required:
-      none: 0
-      no_logic: off
-    accessibility:
-      items: 0
-      locations: off
-      none: off
+      "off": 4
 
   # TFH Specifics
   tfh:
@@ -192,11 +191,11 @@
     triforce_min_difference:
       10: 0
 
-  # ALTTPR Start Inventory
+  # Start Inventory
   # As specified in the weight_options, a random selection of these will be turned on, if available
   startinventory:
     Pegasus Boots:
-      "on": -2
+      "on": -5
       "off": 0
     Progressive Bow:
       "on": -2
@@ -208,13 +207,13 @@
       "on": 0
       "off": 0
     Magic Powder:
-      "on": -1
+      "on": -2
       "off": 0
     Fire Rod:
       "on": -2
       "off": 0
     Ice Rod:
-      "on": -1
+      "on": 0
       "off": 0
     Bombos:
       "on": 0
@@ -223,22 +222,22 @@
       "on": 0
       "off": 0
     Quake:
-      "on": -2
+      "on": 0
       "off": 0
     Lamp:
       "on": -2
       "off": 0
     Hammer:
-      "on": -2
+      "on": -6
       "off": 0
     Shovel:
       "on": 0
       "off": 0
     Ocarina:
-      "on": -2
+      "on": -3
       "off": 0
     Book of Mudora:
-      "on": -1
+      "on": 0
       "off": 0
     Bottle:
       "on": -1
@@ -247,38 +246,34 @@
       "on": -1
       "off": 0
     Cane of Byrna:
-      "on": -1
+      "on": -2
       "off": 0
     Cape:
-      "on": -1
+      "on": -2
       "off": 0
     Magic Mirror:
       "on": -2
       "off": 0
-    Pegasus Boots:
-      "on": -1
-      "off": 0
     Progressive Glove:
-      "on": -1
+      "on": -2
       "off": 0
     Flippers:
       "on": -1
       "off": 0
     Moon Pearl:
-      "on": -1
+      "on": 4
       "off": 0
     Bombs (3):
-      "on": -1
+      "on": 0
       "off": 0
     Rupees (100):
-      "on": -1
+      "on": 0
       "off": 0
     Rupees (300):
       "on": -1
       "off": 0
 
-      
-  # ALTTPR Rom Settings
+  # Rom Settings
   rom:
     sprite:
       unchanged: 0
