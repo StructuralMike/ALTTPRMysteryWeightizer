@@ -105,9 +105,9 @@
       "off": 0
     weapons:
       randomized: 0
-      assured: -2
+      assured: -5
       vanilla: off # Needs to be turned off in OW-rando due to red bomb pathing being disabled
-      swordless: 10
+      swordless: 20
     item_pool:
       normal: 0
       hard: 5
