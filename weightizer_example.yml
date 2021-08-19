@@ -56,10 +56,12 @@
       vanilla: 0
       parallel: 20
       full: 20
-    overworld_swap:
-      vanilla: 0
-      mixed: 20
-      crossed: 15
+    overworld_crossed:
+      "on": 20
+      "off": 0
+    overworld_mixed:
+      "on": 20
+      "off": 0
     flute_shuffle:
       vanilla: 0
       balanced: off
