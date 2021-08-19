@@ -58,8 +58,8 @@
       full: 20
     overworld_swap:
       vanilla: 0
-      mixed: 10
-      crossed: 20
+      mixed: 20
+      crossed: 15
     flute_shuffle:
       vanilla: 0
       balanced: off
