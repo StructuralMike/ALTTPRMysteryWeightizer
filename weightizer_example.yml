@@ -3,8 +3,8 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 25
-    max_points: 80
+    min_points: 15
+    max_points: 40
     min_starting_items: 0
     max_starting_items: 3
 
@@ -43,24 +43,29 @@
 
     entrance_shuffle:
       none: 0
+      dungeonssimple: off
+      dungeonsfull: off
       simple: off
       restricted: off
       full: off
       crossed: 10
       insanity: off
+    shufflelinks:
+      "on": 2
+      "off": 0
     door_shuffle:
       vanilla: 0
       basic: off
       crossed: 20
     overworld_shuffle:
       vanilla: 0
-      parallel: 20
+      parallel: 15
       full: 20
     overworld_crossed:
-      "on": 20
+      "on": 15
       "off": 0
     overworld_mixed:
-      "on": 20
+      "on": 12
       "off": 0
     flute_shuffle:
       vanilla: 0
@@ -71,14 +76,8 @@
     keydropshuffle:
       "on": 8
       "off": 0
-    shopsanity:
-      "on": 5
-      "off": 0
     pot_shuffle:
       "on": off
-      "off": 0
-    bombbag:
-      "on": 2
       "off": 0
     map_shuffle:
       "on": 2
@@ -98,6 +97,12 @@
       default: 0
     
     # Misc
+    bombbag:
+      "on": 2
+      "off": 0
+    shopsanity:
+      "on": 5
+      "off": 0
     weapons:
       randomized: 0
       assured: -2
@@ -152,10 +157,7 @@
       4: off
 
   # Entrance specific
-  entrance:
-    shufflelinks:
-      "on": 1
-      "off": 0
+#  entrance:
 
   # Doors specific
   doors:
