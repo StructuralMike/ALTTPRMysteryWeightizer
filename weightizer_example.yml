@@ -17,8 +17,8 @@
       retro: off
     goals:
       ganon: 0
-      fast_ganon: -2
-      dungeons: 5
+      fast_ganon: -4
+      dungeons: 8
       pedestal: 2
       triforce-hunt: -10
 
