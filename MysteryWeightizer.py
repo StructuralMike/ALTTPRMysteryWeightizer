@@ -44,7 +44,7 @@ def main():
         if 'vanilla' not in settings['door_shuffle']:
             settings,points = roll_settings(yaml_weights['doors'], settings, points)
 
-        if 'vanilla' not in settings['overworld_shuffle'] or 'on' in settings['overworld_crossed'] or 'on' in settings['overworld_mixed']:
+        if 'vanilla' not in settings['overworld_shuffle'] or 'on' in settings['overworld_crossed']:
             settings,points = roll_settings(yaml_weights['ow'], settings, points)
 
         if 'triforce-hunt' in settings['goals']:
