@@ -3,15 +3,15 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 15
-    max_points: 40
+    min_points: 10
+    max_points: 35
     min_starting_items: 0
     max_starting_items: 3
 
   # World settings
   world:
     world_state:
-      standard: off # Currently broken in OW-rando
+      standard: 0
       open: 1
       inverted: 7
       retro: off
