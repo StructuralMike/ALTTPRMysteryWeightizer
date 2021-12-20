@@ -20,17 +20,17 @@
       fast_ganon: -4
       dungeons: 8
       pedestal: 2
-      triforce-hunt: -10
+      triforce-hunt: -15
 
-    tower_open: # The effect of tower_open on length and difficulty depends on many other settings.
+    tower_open:
       "0": 0
-      "1": 0
-      "2": 0
-      "3": 0
-      "4": 0
-      "5": 0
-      "6": 0
-      "7": 0
+      "1": 1
+      "2": 2
+      "3": 3
+      "4": 4
+      "5": 3
+      "6": 2
+      "7": 1
     ganon_open:
       "0": -7
       "1": -6
@@ -241,7 +241,7 @@
       10: 0
 
   # Start Inventory
-  # As specified in the weight_options, a min/max selection of these will be turned on
+  # As specified in the weight_options, a min/max number of these will be turned on
   startinventory:
     Pegasus Boots:
       "on": -5
