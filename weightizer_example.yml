@@ -3,18 +3,18 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 10
+    min_points: 25
     max_points: 35
     min_starting_items: 0
-    max_starting_items: 3
+    max_starting_items: 2
 
   # World settings
   world:
     world_state:
-      standard: 0
-      open: 1
-      inverted: 7
-      retro: off
+      standard: 3
+      open: 0
+      inverted: 10
+      retro: 6
     goals:
       ganon: 0
       fast_ganon: -4
@@ -41,43 +41,52 @@
       "6": -1
       "7": 0
 
+    #World shuffle
     entrance_shuffle:
-      none: 0
-      dungeonssimple: off
-      dungeonsfull: off
-      simple: off
-      restricted: off
-      full: off
-      crossed: 10
-      insanity: off
+      vanilla: 0
+      dungeonssimple: 3
+      dungeonsfull: 3
+      simple: 12
+      restricted: 13
+      full: 15
+      lite: 8
+      lean: 10
+      crossed: 15
+      insanity: 30
     shufflelinks:
       "on": 2
       "off": 0
     door_shuffle:
       vanilla: 0
-      basic: off
-      crossed: 20
+      basic: 8
+      crossed: 10
     overworld_shuffle:
       vanilla: 0
       parallel: 15
       full: 20
     overworld_crossed:
+      none: 0
+      polar: 0
+      allowed: 10
+      limited: 9
+      chaos: 8
+    ow_mixed:
       "on": 12
       "off": 0
-    overworld_mixed:
-      "on": 15
+    ow_whirlpool:
+      "on": 3
       "off": 0
-    flute_shuffle:
+    ow_fluteshuffle:
       vanilla: 0
-      balanced: off
-      random: off
+      balanced: 2
+      random: 3
 
     # Dungeon items
     keydropshuffle:
-      "on": 8
+      "on": 5
       "off": 0
     pot_shuffle:
-      "on": off
+      "on": 10
       "off": 0
     map_shuffle:
       "on": 2
@@ -86,7 +95,7 @@
       "on": 2
       "off": 0
     smallkey_shuffle:
-      "on": 6
+      "on": 8
       "off": 0
     bigkey_shuffle:
       "on": 4
@@ -98,76 +107,112 @@
     
     # Misc
     bombbag:
-      "on": 3
+      "on": 5
       "off": 0
     shopsanity:
-      "on": 3
+      "on": 4
       "off": 0
     weapons:
       randomized: 0
       assured: -5
-      vanilla: off # Needs to be turned off in OW-rando due to red bomb pathing being disabled
-      swordless: 20
+      vanilla: 5
+      swordless: 18
     item_pool:
       normal: 0
       hard: 5
-      expert: 15
+      expert: 10
     item_functionality:
       normal: 0
       hard: 10
-      expert: 25
+      expert: 15
     hints:
-      "on": -1
-      "off": 0
+      "on": 0
+      "off": 1
     pseudoboots:
-      "on": -4
+      "on": -3
       "off": 0
     glitches_required:
       none: 0
+      owg: off
       no_logic: off
     accessibility:
       items: 0
-      locations: off
-      none: off
+      locations: 0
+      none: 3
+
+    # OHKO
+      none: 0
+      timed-ohko: off
+      ohko: off
 
     # Enemizer
     boss_shuffle:
       none: 0
       simple: 4
       full: 4
-      random: 4
+      random: 5
     enemy_shuffle:
       none: 0
       shuffled: 8
-      random: 8
+      random: 9
     enemy_damage:
       default: 0
       shuffled: 4
-      random: 4
+      random: 15
     enemy_health:
       default: 0
       easy: -6
       hard: 4
-      expert: 10
+      expert: 15
     beemizer:
       "0": 0
-      "1": off
-      "2": off
-      "3": off
-      "4": off
+      "1": 5
+      "2": 10
+      "3": 20
+      "4": 30
+
+    # Kara fork specific
+    # ganon_item:
+    #   "default": 0
+    #   "arrow": -2
+    #   "boomerang": 2
+    #   "hookshot": 2
+    #   "bomb": 2
+    #   "powder": 2
+    #   "fire_rod": 2
+    #   "ice_rod": 2
+    #   "bombos": 2
+    #   "ether": 2
+    #   "quake": 2
+    #   "hammer": 2
+    #   "bee": 2
+    #   "somaria": 2
+    #   "byrna": 2
+
+    # weapons:
+    #   randomized: 0
+    #   assured: -5
+    #   vanilla: 5
+    #   swordless: 18
+    #   pseudo: 7
+    #   assured_pseudo: 2
+    #   bombs: 10
 
   # Entrance specific
-#  entrance:
+  entrance:
+    no_shuffleganon:
+      "off": 0
+      "on": 2
 
   # Doors specific
   doors:
     intensity:
-      1: 0
-      2: off
-      3: 5
+      "1": 0
+      "2": 2
+      "3": 5
     experimental:
-      "on": 0
-      "off": off
+      "on": 1
+      "off": 0
     mixed_travel:
       prevent: 0
       allow: off
@@ -196,7 +241,7 @@
       10: 0
 
   # Start Inventory
-  # As specified in the weight_options, a random selection of these will be turned on, if available
+  # As specified in the weight_options, a min/max selection of these will be turned on
   startinventory:
     Pegasus Boots:
       "on": -5

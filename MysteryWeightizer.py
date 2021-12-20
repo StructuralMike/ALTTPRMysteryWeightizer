@@ -38,13 +38,13 @@ def main():
         settings,points = roll_settings(yaml_weights['rom'], settings, points, sub='rom')
         settings,points = roll_settings(yaml_weights['world'], settings, points)
 
-#        if 'none' not in settings['entrance_shuffle']:
-#            settings,points = roll_settings(yaml_weights['entrance'], settings, points)
+        if 'vanilla' not in settings['entrance_shuffle']:
+            settings,points = roll_settings(yaml_weights['entrance'], settings, points)
 
         if 'vanilla' not in settings['door_shuffle']:
             settings,points = roll_settings(yaml_weights['doors'], settings, points)
 
-        if 'vanilla' not in settings['overworld_shuffle'] or 'on' in settings['overworld_crossed']:
+        if 'vanilla' not in settings['overworld_shuffle'] or 'limited' in settings['overworld_crossed'] or 'chaos' in settings['overworld_crossed']:
             settings,points = roll_settings(yaml_weights['ow'], settings, points)
 
         if 'triforce-hunt' in settings['goals']:
