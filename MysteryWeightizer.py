@@ -50,6 +50,9 @@ def main():
         if 'triforce-hunt' in settings['goals']:
             settings,points = roll_settings(yaml_weights['tfh'], settings, points)
 
+        if 'triforce-hunt' not in settings['goals'] and 'pedestal' not in settings['goals'] and 'dungeons' not in settings['goals']:
+            settings,points = roll_settings(yaml_weights['ganon_goal'], settings, points)
+
         # Roll starting inventory
         try:
             start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])

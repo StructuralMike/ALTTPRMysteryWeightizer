@@ -11,15 +11,15 @@
   # World settings
   world:
     world_state:
-      standard: 3
+      standard: -3
       open: 0
       inverted: 10
       retro: 6
     goals:
       ganon: 0
-      fast_ganon: -4
+      fast_ganon: -5
       dungeons: 8
-      pedestal: 2
+      pedestal: 3
       triforce-hunt: -15
 
     tower_open:
@@ -31,19 +31,10 @@
       "5": 3
       "6": 2
       "7": 1
-    ganon_open:
-      "0": -7
-      "1": -6
-      "2": -5
-      "3": -4
-      "4": -3
-      "5": -2
-      "6": -1
-      "7": 0
 
     #World shuffle
     entrance_shuffle:
-      vanilla: 0
+      vanilla: -3
       dungeonssimple: 3
       dungeonsfull: 3
       simple: 12
@@ -58,18 +49,18 @@
       "off": 0
     door_shuffle:
       vanilla: 0
-      basic: 8
-      crossed: 10
+      basic: 10
+      crossed: 18
     overworld_shuffle:
       vanilla: 0
       parallel: 15
-      full: 20
+      full: 23
     overworld_crossed:
       none: 0
-      polar: 0
-      allowed: 10
-      limited: 9
-      chaos: 8
+      polar: off
+      allowed: 15
+      limited: 10
+      chaos: 15
     ow_mixed:
       "on": 12
       "off": 0
@@ -100,22 +91,18 @@
     bigkey_shuffle:
       "on": 4
       "off": 0
-    dungeon_counters:
-      "on": off
-      "off": off
-      default: 0
     
     # Misc
     bombbag:
-      "on": 5
+      "on": 4
       "off": 0
     shopsanity:
-      "on": 4
+      "on": 3
       "off": 0
     weapons:
       randomized: 0
       assured: -5
-      vanilla: 5
+      vanilla: 2
       swordless: 18
     item_pool:
       normal: 0
@@ -124,10 +111,10 @@
     item_functionality:
       normal: 0
       hard: 10
-      expert: 15
+      expert: 20
     hints:
-      "on": 0
-      "off": 1
+      "on": -1
+      "off": 0
     pseudoboots:
       "on": -3
       "off": 0
@@ -136,11 +123,12 @@
       owg: off
       no_logic: off
     accessibility:
-      items: 0
+      items: off
       locations: 0
       none: 3
 
     # OHKO
+    timer:
       none: 0
       timed-ohko: off
       ohko: off
@@ -148,7 +136,7 @@
     # Enemizer
     boss_shuffle:
       none: 0
-      simple: 4
+      simple: off
       full: 4
       random: 5
     enemy_shuffle:
@@ -161,15 +149,15 @@
       random: 15
     enemy_health:
       default: 0
-      easy: -6
-      hard: 4
-      expert: 15
+      easy: -7
+      hard: 5
+      expert: 20
     beemizer:
       "0": 0
       "1": 5
       "2": 10
       "3": 20
-      "4": 30
+      "4": 35
 
     # Kara fork specific
     # ganon_item:
@@ -208,11 +196,11 @@
   doors:
     intensity:
       "1": 0
-      "2": 2
-      "3": 5
+      "2": 5
+      "3": 10
     experimental:
-      "on": 1
-      "off": 0
+      "on": 0
+      "off": off
     mixed_travel:
       prevent: 0
       allow: off
@@ -220,6 +208,10 @@
     standardize_palettes:
       standardize: 0
       original: off
+    dungeon_counters:
+      "on": -5
+      "off": off
+      default: 0
 
   # OW Specifics
   ow:
@@ -240,6 +232,18 @@
     triforce_min_difference:
       10: 0
 
+  # Non AD/TFH-Specific
+  ganon_goal:
+    ganon_open:
+      "0": -9
+      "1": -8
+      "2": -7
+      "3": -6
+      "4": -5
+      "5": -4
+      "6": -2
+      "7": 0
+
   # Start Inventory
   # As specified in the weight_options, a min/max number of these will be turned on
   startinventory:
@@ -259,7 +263,7 @@
       "on": -2
       "off": 0
     Fire Rod:
-      "on": -2
+      "on": -1
       "off": 0
     Ice Rod:
       "on": 0
