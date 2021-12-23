@@ -61,13 +61,13 @@
       allowed: 15
       limited: 10
       chaos: 15
-    ow_mixed:
+    overworld_shuffle:
       "on": 12
       "off": 0
-    ow_whirlpool:
+    whirlpool_shuffle:
       "on": 3
       "off": 0
-    ow_fluteshuffle:
+    flute_shuffle:
       vanilla: 0
       balanced: 2
       random: 3
