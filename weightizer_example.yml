@@ -61,7 +61,7 @@
       allowed: 15
       limited: 10
       chaos: 15
-    overworld_shuffle:
+    overworld_swap:
       "on": 12
       "off": 0
     whirlpool_shuffle:
