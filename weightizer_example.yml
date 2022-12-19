@@ -3,25 +3,37 @@
   # Weight System Settings
   # The generator will keep generating settings until it reaches a combination that fits these criteria
   weight_options:
-    min_points: 25
-    max_points: 35
-    min_starting_items: 0
-    max_starting_items: 2
+    min_points: 24
+    max_points: 33
+    max_starting_items: 4
 
   # World settings
   world:
+    algorithm:
+      balanced: 0
+      vanilla_fill: off
+      major_only: -5
+      dungeon_only: -5
+      district: off
+    glitches_required:
+      none: 0
+      minorglitches: off
+      owglitches: off
+      no_logic: off
     world_state:
       standard: -3
       open: 0
       inverted: 10
-      retro: 6
+      retro: off
     goals:
       ganon: 0
       fast_ganon: -5
       dungeons: 8
       pedestal: 3
+      ganonhunt: 0
       triforce-hunt: -15
-
+      completioninst: off
+      trinity: off
     tower_open:
       "0": 0
       "1": 1
@@ -34,50 +46,28 @@
 
     #World shuffle
     entrance_shuffle:
-      vanilla: -3
-      dungeonssimple: 3
-      dungeonsfull: 3
-      simple: 12
+      vanilla: -5
+      dungeonssimple: off
+      dungeonsfull: off
+      simple: off
       restricted: 13
-      full: 15
-      lite: 8
+      full: off
+      lite: off
       lean: 10
       crossed: 15
-      insanity: 30
-    shufflelinks:
-      "on": 2
-      "off": 0
+      insanity: off
     door_shuffle:
       vanilla: 0
       basic: 10
       crossed: 18
-    overworld_shuffle:
-      vanilla: 0
-      parallel: 15
-      full: 23
-    overworld_crossed:
+    take_any:
+      random: off
+      fixed: off
       none: 0
-      polar: off
-      allowed: 15
-      limited: 10
-      chaos: 15
-    overworld_swap:
-      "on": 12
-      "off": 0
-    whirlpool_shuffle:
-      "on": 3
-      "off": 0
-    flute_shuffle:
-      vanilla: 0
-      balanced: 2
-      random: 3
 
     # Dungeon items
-    keydropshuffle:
-      "on": 5
-      "off": 0
     pot_shuffle:
-      "on": 10
+      "on": off
       "off": 0
     map_shuffle:
       "on": 2
@@ -86,32 +76,49 @@
       "on": 2
       "off": 0
     smallkey_shuffle:
-      "on": 8
-      "off": 0
+      none: 0
+      wild: 5
+      universal: off
     bigkey_shuffle:
       "on": 4
       "off": 0
+    restrict_boss_items:
+      none: 0
+      dungeon: 1
     
     # Misc
+    pottery:
+      none: 0
+      keys: 5
+      cave: 5
+      dungeon: 5
+      lottery: 15
+      cavekeys: 10
+      reduced: 12
+      clustered: 10
+      nonempty: 9
     bombbag:
-      "on": 4
+      "on": 8
       "off": 0
     shopsanity:
-      "on": 3
+      "on": 5
       "off": 0
+    flute_mode:
+      normal: 0
+      active: -1
     weapons:
       randomized: 0
       assured: -5
       vanilla: 2
-      swordless: 18
+      swordless: 15
     item_pool:
       normal: 0
       hard: 5
-      expert: 10
+      expert: 18
     item_functionality:
       normal: 0
-      hard: 10
-      expert: 20
+      hard: off
+      expert: off
     hints:
       "on": -1
       "off": 0
@@ -145,19 +152,41 @@
       random: 9
     enemy_damage:
       default: 0
-      shuffled: 4
-      random: 15
+      shuffled: off
+      random: off
     enemy_health:
       default: 0
-      easy: -7
-      hard: 5
-      expert: 20
+      easy: off
+      hard: off
+      expert: off
     beemizer:
       "0": 0
       "1": 5
-      "2": 10
-      "3": 20
-      "4": 35
+      "2": off
+      "3": off
+      "4": off
+
+    #OW Branch
+    overworld_shuffle:
+      vanilla: 0
+      parallel: off
+      full: off
+    overworld_crossed:
+      none: 0
+      polar: off
+      allowed: off
+      limited: off
+      chaos: off
+    overworld_swap:
+      "on": off
+      "off": 0
+    whirlpool_shuffle:
+      "on": off
+      "off": 0
+    flute_shuffle:
+      vanilla: 0
+      balanced: off
+      random: off
 
     # Kara fork specific
     # ganon_item:
@@ -188,16 +217,23 @@
 
   # Entrance specific
   entrance:
-    no_shuffleganon:
+    shufflelinks:
+      "on": 0
       "off": 0
-      "on": 2
+    shuffletavern:
+      "on": 0
+      "off": 0
+    overworld_map:
+      default: 0
+      compass: -1
+      map: -1
 
   # Doors specific
   doors:
     intensity:
-      "1": 0
-      "2": 5
-      "3": 10
+      "1": off
+      "2": off
+      "3": 0
     experimental:
       "on": 0
       "off": off
@@ -209,9 +245,17 @@
       standardize: 0
       original: off
     dungeon_counters:
-      "on": -5
+      "on": 0
       "off": off
-      default: 0
+      default: off
+    door_type_mode:
+      original: 0
+      big: 2
+      all: 3
+      chaos: 6
+    decoupledoors:
+      off: 0
+      on: 15
 
   # OW Specifics
   ow:
@@ -247,84 +291,32 @@
   # Start Inventory
   # As specified in the weight_options, a min/max number of these will be turned on
   startinventory:
-    Pegasus Boots:
-      "on": -5
-      "off": 0
-    Progressive Bow:
-      "on": -2
-      "off": 0
-    Hookshot:
-      "on": -2
-      "off": 0
-    Mushroom:
-      "on": 0
-      "off": 0
-    Magic Powder:
-      "on": -2
-      "off": 0
-    Fire Rod:
-      "on": -1
-      "off": 0
-    Ice Rod:
-      "on": 0
-      "off": 0
-    Bombos:
-      "on": 0
-      "off": 0
-    Ether:
-      "on": 0
-      "off": 0
-    Quake:
-      "on": 0
-      "off": 0
-    Lamp:
-      "on": -2
-      "off": 0
-    Hammer:
-      "on": -6
-      "off": 0
-    Shovel:
-      "on": 0
-      "off": 0
-    Ocarina:
-      "on": -3
-      "off": 0
-    Book of Mudora:
-      "on": 0
-      "off": 0
-    Bottle:
-      "on": -1
-      "off": 0
-    Cane of Somaria:
-      "on": -1
-      "off": 0
-    Cane of Byrna:
-      "on": -2
-      "off": 0
-    Cape:
-      "on": -2
-      "off": 0
-    Magic Mirror:
-      "on": -2
-      "off": 0
-    Progressive Glove:
-      "on": -2
-      "off": 0
-    Flippers:
-      "on": -1
-      "off": 0
-    Moon Pearl:
-      "on": 4
-      "off": 0
-    Bombs (3):
-      "on": 0
-      "off": 0
-    Rupees (100):
-      "on": 0
-      "off": 0
-    Rupees (300):
-      "on": -1
-      "off": 0
+    Pegasus Boots: -5
+    Progressive Bow: -1
+    Hookshot: -2
+    Mushroom: off
+    Magic Powder: -2
+    Fire Rod: -1
+    Ice Rod: 0
+    Bombos: 0
+    Ether: 0
+    Quake: 0
+    Lamp: -3
+    Hammer: -5
+    Shovel: off
+    Ocarina: -3
+    Book of Mudora: 0
+    Bottle: -1
+    Cane of Somaria: 0
+    Cane of Byrna: -2
+    Cape: -2
+    Magic Mirror: -2
+    Progressive Glove: -2
+    Flippers: -1
+    Moon Pearl: 4
+    Bombs (3): 0
+    Rupees (100): 0
+    Rupees (300): -1
 
   # Rom Settings
   rom:

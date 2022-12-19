@@ -2,11 +2,11 @@ import yaml
 import random
 import argparse
 
-def roll_settings(weights,settings,points,sub='none'):
+def roll_settings(weights,settings,points,sub = None):
     for setting,alternatives in weights.items():
         options = [x for x in list(alternatives.items()) if type(x[1]) == int]
         option = random.choice(options)
-        if sub != 'none':
+        if sub:
             settings[sub][setting] = {option[0]: 1}
         else:
             settings[setting] = {option[0]: 1}
@@ -15,8 +15,8 @@ def roll_settings(weights,settings,points,sub='none'):
 
 def main():
     parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument('--i', help='Path to the points weights file to use for rolling game settings')
-    parser.add_argument('--o', help='Output path for the rolled mystery yaml')
+    parser.add_argument('-i', help='Path to the points weights file to use for rolling game settings')
+    parser.add_argument('-o', help='Output path for the rolled mystery yaml')
     args = parser.parse_args()
 
     input_yaml = "weightizer_example.yml"
@@ -47,32 +47,38 @@ def main():
         if 'vanilla' not in settings['overworld_shuffle'] or 'limited' in settings['overworld_crossed'] or 'chaos' in settings['overworld_crossed']:
             settings,points = roll_settings(yaml_weights['ow'], settings, points)
 
-        if 'triforce-hunt' in settings['goals']:
+        if 'triforce-hunt' or 'ganonhunt' or 'trinity' in settings['goals']:
             settings,points = roll_settings(yaml_weights['tfh'], settings, points)
 
         if 'triforce-hunt' not in settings['goals'] and 'pedestal' not in settings['goals'] and 'dungeons' not in settings['goals']:
             settings,points = roll_settings(yaml_weights['ganon_goal'], settings, points)
 
         # Roll starting inventory
-        try:
-            start_items = random.randint(yaml_weights['weight_options']['min_starting_items'],yaml_weights['weight_options']['max_starting_items'])
-            item_choices = []
-            for setting,alternatives in yaml_weights['startinventory'].items():
-                if 'on' in alternatives and type(alternatives['on']) == int:
-                    if 'off' not in alternatives or type(alternatives['off']) != int:
-                        settings['startinventory'][alternatives[0]] = {'on': 1}
-                        points += alternatives[1]
-                    else:
-                        item_choices.append((setting, alternatives['on']))
-            random.shuffle(item_choices)
-            while start_items > len(settings['startinventory']):
-                item = item_choices.pop()
-                settings['startinventory'][item[0]] = {'on': 1}
-                points += item[1]
-        except:
-            pass # No (more) starting items available
-        
-        if points <= yaml_weights['weight_options']['max_points'] and points >= yaml_weights['weight_options']['min_points']:
+        min_points = yaml_weights['weight_options']['min_points']
+        max_points = yaml_weights['weight_options']['max_points']
+        max_items = yaml_weights['weight_options']['max_starting_items']
+        if max_items > 0:
+            available_items = [(item, weight) for item, weight in yaml_weights['startinventory'].items() if type(weight) == int]
+            random.shuffle(available_items)
+            for item, weight in available_items:
+                if len(settings['startinventory']) >= max_items:
+                    break
+                if points+weight <= max_points and points+weight >= min_points:
+                    settings['startinventory'][item] = {'on': 1}
+                    points += weight
+                    if random.random() < 0.5:
+                        break
+                    continue
+                if points < min_points and weight > 0:
+                    settings['startinventory'][item] = {'on': 1}
+                    points += weight
+                    continue
+                if points > max_points and weight < 0:
+                    settings['startinventory'][item] = {'on': 1}
+                    points += weight
+                    continue
+
+        if points <= max_points and points >= min_points:
             break
 
     settings['description'] = 'Weightizer score: {} points'.format(points)
