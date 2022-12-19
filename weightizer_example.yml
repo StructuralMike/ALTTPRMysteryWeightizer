@@ -30,8 +30,8 @@
       fast_ganon: -5
       dungeons: 8
       pedestal: 3
-      ganonhunt: 0
-      triforce-hunt: -15
+      ganonhunt: off
+      triforce-hunt: off
       completioninst: off
       trinity: off
     tower_open:
